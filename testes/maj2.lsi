@@ -1,0 +1,36 @@
+COMPILE;
+DIRECTORY MASTER;
+/****** Technology used: qca2 ******/
+MODULE MAJ_2;
+INPUTS  A,B,C,D,E,F,G,H,I;
+/* OUTPUTS  MAJ,AND_AB,OR_CD; */
+OUTPUTS MAJ;
+LEVEL FUNCTION;
+DEFINE
+A = (A);
+B = (B);
+C = (C);
+D = (D);
+E = (E);
+F = (F);
+G = (G);
+H = (H);
+I = (I);
+MAJ = (MAJ);
+
+U7(N4=Z) = AND2(C=A,N5=B);
+U8(N6=Z) = OR2(N7=A,N4=B);
+U9(N8=Z) = AND2(F=A,N9=B);
+U10(N10=Z) = OR2(N11=A,N8=B);
+U11(MAJ=Z) = MAJ3(N6=A,N12=B,N10=C);
+U12(N12=Z) = MAJ3(H=A,I=B,G=C);
+U13(N5=Z) = OR2(B=A,A=B);
+U14(N7=Z) = AND2(B=A,A=B);
+U15(N9=Z) = OR2(E=A,D=B);
+U16(N11=Z) = AND2(E=A,D=B);
+
+END MODULE;
+
+END COMPILE;
+END;
+

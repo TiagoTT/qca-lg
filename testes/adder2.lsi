@@ -1,0 +1,47 @@
+COMPILE;
+DIRECTORY MASTER;
+
+
+/****** Technology used: qca4 ******/
+MODULE ADDER2;
+
+INPUTS  A_1_,A_0_,B_1_,B_0_,CI;
+OUTPUTS  S_1_,S_0_;
+
+LEVEL FUNCTION;
+DEFINE
+
+
+A_1_ = (A_1_);
+A_0_ = (A_0_);
+B_1_ = (B_1_);
+B_0_ = (B_0_);
+CI = (CI);
+S_1_ = (S_1_);
+S_0_ = (S_0_);
+
+U7(N92=Z1) = INV(A_0_=A);
+U8(N93=Z) = NAND2(N94=A,N95=B);
+U9(S_0_=Z) = OR2(N96=A,N97=B);
+U10(N98=Z) = AND2(N99=A,N100=B);
+U11(N101=Z1) = INV(A_1_=A);
+U12(N102=Z) = AND2(N103=A,N104=B);
+U13(S_1_=Z) = AND2(N105=A,N106=B);
+U14(N96=Z) = AND2(CI=A,N107=B);
+U15(N97=Z) = NOR2(CI=A,N107=B);
+U16(N104=Z) = NAND2(CI=A,N93=B);
+U17(N103=Z) = NAND2(A_0_=A,B_0_=B);
+U18(N95=Z) = NAND2(N92=A,B_0_=B);
+U19(N94=Z) = OR2(B_0_=A,N92=B);
+U20(N100=Z) = OR2(B_1_=A,N101=B);
+U21(N99=Z) = NAND2(N101=A,B_1_=B);
+U22(N106=Z) = NAND2(N102=A,N98=B);
+U23(N105=Z) = OR2(N98=A,N102=B);
+U24(N107=Z1) = INV(N93=A);
+
+
+END MODULE;
+
+END COMPILE;
+END;
+

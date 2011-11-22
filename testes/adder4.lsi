@@ -1,0 +1,34 @@
+COMPILE;
+DIRECTORY MASTER;
+
+
+/****** Technology used: gtech ******/
+
+/****** Technology used: qca4 ******/
+MODULE ADDER4;
+
+INPUTS  A,B,CI;
+OUTPUTS  S,CO;
+
+LEVEL FUNCTION;
+DEFINE
+
+
+A = (A);
+B = (B);
+CI = (CI);
+S = (S);
+CO = (CO);
+
+S_0(NOT_CI=Z) = INV(CI=A);
+MAJ_1(CO=Z) = MAJ3(A=A,B=B,CI=C);
+S_1(NOT_CO_AUX=Z) = INV(CO=A);
+MAJ_2(MAJ_AUX=Z) = MAJ3(A=A,B=B,NOT_CI=C);
+MAJ_3(S=Z) = MAJ3(NOT_CO_AUX=A,MAJ_AUX=B,CI=C);
+
+
+END MODULE;
+
+END COMPILE;
+END;
+

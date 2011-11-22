@@ -1,0 +1,25 @@
+COMPILE;
+DIRECTORY MASTER;
+
+MODULE EXAMPLE;
+
+INPUTS  in0,in1,sel;
+OUTPUTS  out;
+
+LEVEL FUNCTION;
+DEFINE
+
+in0 = (in0);
+in1 = (in1);
+sel = (sel);
+out = (out);
+
+U10(out=Z) = OR2(s0=A,s1=B);
+U11(s0=Z) = AND2(in0=A,not_sel=B);
+U12(s1=Z) = AND2(in1=A,sel=B);
+U13(not_sel=Z) = INV(sel=A);
+
+END MODULE;
+
+END COMPILE;
+END;

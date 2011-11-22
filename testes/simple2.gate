@@ -1,0 +1,6 @@
+.model blif_de_teste
+.inputs a b c
+.outputs out
+.default_input_arrival 0 0
+.gate MAJ3 a=c b=b c=a Z1=out
+.end

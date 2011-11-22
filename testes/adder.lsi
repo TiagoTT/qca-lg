@@ -1,0 +1,40 @@
+COMPILE;
+DIRECTORY MASTER;
+
+
+/****** Technology used: qca2 ******/
+MODULE ADDER;
+
+INPUTS  A,B,CI;
+OUTPUTS  S,CO;
+
+LEVEL FUNCTION;
+DEFINE
+
+
+A = (A);
+B = (B);
+CI = (CI);
+S = (S);
+CO = (CO);
+
+U33(CO=Z) = OR2(N26=A,N27=B);
+U34(N26=Z) = AND2(CI=A,N28=B);
+U35(N27=Z) = AND2(A=A,B=B);
+U36(N28=Z) = OR2(N29=A,N30=B);
+U37(S=Z) = OR2(N31=A,N32=B);
+U38(N29=Z) = AND2(B=A,N33=B);
+U39(N30=Z) = AND2(A=A,N34=B);
+U40(N31=Z) = AND2(N35=A,CI=B);
+U41(N36=Z) = OR2(N35=A,CI=B);
+U42(N33=Z1) = INV(A=A);
+U43(N34=Z1) = INV(B=A);
+U44(N35=Z1) = INV(N28=A);
+U45(N32=Z1) = INV(N36=A);
+
+
+END MODULE;
+
+END COMPILE;
+END;
+
