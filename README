@@ -1,0 +1,14 @@
+This code is given to the public as it is.
+
+Please visit the project homepage for documentation.
+http://web.ist.utl.pt/ttt/qca-lg/index.html
+
+To build the program, just run:
+make
+
+To run the tests, just run:
+cd testes
+./testes.pl
+
+Good luck!
+
